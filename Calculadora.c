@@ -2,15 +2,27 @@
 
 int main(void) {
   int escolha;
-  double num1,num2, soma, mult, div, sair;
+  double num1, num2, soma, mult, div, sub, sair;
 
-  
-  printf("Escolha uma das opções\n ");
+
+while (1) {  
+  printf("\nEscolha uma das opções\n ");
   printf("1 - Soma\n");
-  printf("2 - Multiplicalçao\n");
-  printf("3 - Divisão\n");
-  printf("4 - Sair\n");
+  printf("2 - Subtrair\n");
+  printf("3 - Multiplicalçao\n");
+  printf("4 - Divisão\n");
+  printf("5 - Sair\n");
   scanf("%d", &escolha);
+
+  if (escolha == 5) {
+    printf("Saindo do programa\n");
+    break;
+  }
+  if (escolha < 1 || escolha > 5) {
+    printf("Opção invalida\n");
+    break;
+  }
+    
 
     switch(escolha) {
       case 1:
@@ -21,11 +33,24 @@ int main(void) {
         scanf("%lf", &num2);
         
         soma = num1 + num2;
-
       
-        printf("A soma dos numeros é: %lf" , soma);
-        break;
+        printf("nA soma dos numeros é: %lf" , soma);
+  
+       break;
+    
       case 2:
+      printf("Informe o primeiro numero para subtrair\n");
+      scanf("%lf", &num1);
+      printf("Informe o segundo numero para Subtrair\n");
+      scanf("%lf", &num2);
+
+      sub = num1 - num2;
+        
+      printf("A subtração dos numeros é: %lf" , sub);
+        
+      break;
+      
+      case 3:
         printf("Informe o primeiro numero para multiplicar\n");
         scanf("%lf", &num1);
         printf("Informe o segundo numero para multiplicar\n");
@@ -34,7 +59,8 @@ int main(void) {
         mult = num1 * num2;
         printf("A multiplicação dos numeros é: %lf" , mult);
         break;
-      case 3:
+      
+      case 4:
         printf("Informe o primeiro numero para dividir\n");
 scanf("%lf", &num1);
         printf("Informe o segundo numero para dividir\n");
@@ -46,23 +72,24 @@ scanf("%lf", &num1);
           printf("Não é possivel dividir por zero\n");
           
        
-          
+         
         }
           
         printf("A divisão dos numeros é: %lf" , div);
         
         break;
         
-      case 4:
+      case 5:
         printf("Saindo do programa\n");
         break;
-      default:
-        printf("Programa encerrado");
+      
+     
+  
 
         
     }
 
-
+}
 
   return 0;
 }
